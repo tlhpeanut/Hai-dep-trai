@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    background-color: #ffe6e9; /* Fallback */
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    max-width: 90%;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ff4d6d;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gif-container img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100px; /* Space for growing button */
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+#yesBtn {
+    background-color: #ff4d6d;
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+}
+
+#yesBtn:hover {
+    background-color: #ff3355;
+    transform: scale(1.05);
+}
+
+#noBtn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#noBtn:hover {
+    background-color: #d6d6d6;
+}
+
+/* Success Message Styles */
+#successMessage {
+    display: none;
+}
+
+.love-text {
+    font-family: 'Pacifico', cursive;
+    color: #ff4d6d;
+    font-size: 4rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Floating Hearts Background */
+.bg-heart {
+    position: absolute;
+    top: -10vh;
+    background: rgba(255, 182, 193, 0.5);
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    animation: fall linear infinite;
+    z-index: 1;
+}
+
+.bg-heart::before,
+.bg-heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 182, 193, 0.5);
+    border-radius: 50%;
+}
+
+.bg-heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.bg-heart::after {
+    top: 0;
+    left: -10px;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(110vh) rotate(45deg);
+        opacity: 0;
+    }
+}
